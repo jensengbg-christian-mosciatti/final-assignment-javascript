@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: #313131;
+  --grid-width: calc(15.5rem);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  /* overflow-x: hidden; */
+}
+
+.search {
+  position: fixed;
+
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.623);
+  z-index: 0;
+
+  transition: transform 0.5s;
+}
+
+.search,
+.search form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search form input {
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+.search form input[type="text"] {
+  text-align: center;
+  max-width: 80vw;
+  padding: 0.3rem;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.6);
+}
+.search form input[type="submit"] {
+  padding: 0.3rem 2rem;
+  background-color: transparent;
+  border: none;
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+.toggle {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  /* width: 200px; */
+  transition: transform 0.5s;
+  mask-image: url(/images/close-24px.svg);
+  -webkit-mask-image: url(/images/close-24px.svg);
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.toggle-bckground {
+  mask-image: url(/images/search-24px.svg);
+  -webkit-mask-image: url(/images/search-24px.svg);
+}
+
+.toggle-slide::before {
+  text-align: center;
+  font-family: Arial;
+  content: "Search";
+  color: white;
+  font-size: 2rem;
+}
+
+/* .search .toggle input { */
+.toggle input {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2; /* and place it over the hamburger */
+}
+
+.searchSlide {
+  transform: translateX(-100vw);
+}
+
+.lightbox {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* overflow: hidden; */
+  position: fixed;
+}
+.lightbox > div img {
+  width: auto;
+
+  height: 90vh;
+}
+
+main {
+  display: grid;
+
+  grid-template-columns: 95vw;
+  grid-template-rows: min-content;
+}
+
+img {
+  display: block;
+  /* min-height: 250px; */
+  /* padding: 0.3rem; */
+  width: 100%;
+  height: auto;
+  border: 2px solid rgb(252, 255, 227);
+}
+
+.displayI {
+  display: none;
+}
+
+.cont1 {
+  display: block;
+}
+
+.display,
+.cl1,
+.cl21,
+.cl22,
+.cl31,
+.cl32,
+.cl33,
+.cl41,
+.cl42,
+.cl43,
+.cl44,
+.cl51,
+.cl52,
+.cl53,
+.cl54,
+.cl55,
+.cont2,
+.cont3,
+.cont4,
+.cont5 {
+  display: none;
+}
+
+@media screen and (max-width: 599px) {
+  .cl1 {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 799px) {
+  main {
+    grid-template-columns: calc(var(--grid-width) + 5vw) calc(
+        var(--grid-width) + 5vw
+      );
+  }
+
+  .cont1 .cl21 {
+    display: block;
+  }
+
+  .cont2 {
+    display: block;
+  }
+
+  .cont2 > .cl22 {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1023px) {
+  main {
+    grid-template-columns:
+      calc(var(--grid-width) + 2vw) calc(var(--grid-width) + 2vw)
+      calc(var(--grid-width) + 2vw);
+  }
+
+  .cont2,
+  .cont3 {
+    display: block;
+  }
+
+  .cont1 > .cl31,
+  .cont2 > .cl32,
+  .cont3 > .cl33 {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1399px) {
+  main {
+    grid-template-columns: repeat(4, calc(var(--grid-width) + 1vw));
+  }
+
+  .cont2,
+  .cont3,
+  .cont4 {
+    display: block;
+  }
+
+  .cont1 > .cl41,
+  .cont2 > .cl42,
+  .cont3 > .cl43,
+  .cont4 > .cl44 {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  main {
+    grid-template-columns: repeat(5, var(--grid-width));
+  }
+
+  .cont2,
+  .cont3,
+  .cont4,
+  .cont5 {
+    display: block;
+  }
+
+  .cont1 > .cl51,
+  .cont2 > .cl52,
+  .cont3 > .cl53,
+  .cont4 > .cl54,
+  .cont5 > .cl55 {
+    display: block;
+  }
+}

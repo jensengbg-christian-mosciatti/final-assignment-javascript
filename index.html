@@ -1,13 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/stylesheet.css">
-        <title>Final assignment JavaScript</title>
-    </head>
-    <body>
-        <script src="js/index.js"></script>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/stylesheet.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/progressive-image.js/dist/progressive-image.css"
+    />
+    <title>Final assignment JavaScript</title>
+  </head>
+  <body>
+    <section class="search">
+      <form>
+        <label for="search-text"></label>
+        <input
+          type="text"
+          name="text"
+          id="search-text"
+          autofocus
+          autocomplete="off"
+        />
+        <input type="submit" value="Search" id="search-submit" />
+      </form>
+    </section>
+    <div class="toggle">
+      <input type="checkbox" name="addsadsa" id="checkbox" />
+    </div>
+    <div class="lightbox display">
+      <div>
+        <a href="#" class="progressive"></a>
+      </div>
+    </div>
+    <main class="grid">
+      <!-- <div class="container cont1"></div> -->
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/progressive-image.js/dist/progressive-image.js"></script>
+    <script type="module" src="js/index.js"></script>
+  </body>
 </html>
-
