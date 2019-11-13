@@ -5,6 +5,7 @@ const apiKey = "19d3e6e0acfe9c438f368e2c2bab1c5d";
 let page = 1;
 let classArrayIndex = 0;
 let searchText = "";
+let searchQty = null;
 
 function getRandom(max) {
   // min = Math.ceil(min);
@@ -36,8 +37,9 @@ function setPage(increase) {
   else page = 1;
 }
 
-function search(text) {
+function search(text, qty = 50) {
   if (text) searchText = text;
+  searchQty = qty;
   classArrayIndex = 0;
   setPage(false);
   clearPage();
@@ -45,4 +47,12 @@ function search(text) {
 }
 
 export default { classArrayIndex };
-export { apiKey, page, classArrayIndex, searchText, setPage, search };
+export {
+  apiKey,
+  page,
+  classArrayIndex,
+  searchText,
+  searchQty,
+  setPage,
+  search
+};

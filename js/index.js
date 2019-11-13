@@ -90,9 +90,10 @@ function toggleSearch() {
 document.getElementById("search-submit").addEventListener("click", event => {
   event.preventDefault();
   const text = document.getElementById("search-text").value;
+  const qty = document.getElementById("search-qty").value;
   if (text.length) {
     // main.searchText = text;
-    search(text);
+    search(text, qty);
     // document.querySelector(".search").classList.toggle("displayI");
     document.getElementById("search-text").value = "";
     toggleSearch();

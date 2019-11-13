@@ -1,4 +1,4 @@
-import { apiKey, searchText, page } from "./main.js";
+import { apiKey, searchText, searchQty, page } from "./main.js";
 import main from "./main.js";
 import { updateDOM } from "./dom.js";
 
@@ -9,7 +9,9 @@ function loadPictures() {
       apiKey +
       "&text=" +
       searchText +
-      "&per_page=50&page=" +
+      "&per_page=" +
+      searchQty +
+      "&page=" +
       page +
       "&format=json&nojsoncallback=1";
     fetch(URL, {
